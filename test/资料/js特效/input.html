@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<script>
+var id = 0;
+
+/**
+新增行
+*/
+function newLine(itemName){
+	var table = document.all.item(itemName);
+	var tr = table.insertRow(2 + (id++));
+	var td = tr.insertCell();
+	td.innerHTML = id;
+	td = tr.insertCell();
+	td.innerHTML = getNameElement();
+	td = tr.insertCell();
+	td.innerHTML = getUnitElement();
+	td = tr.insertCell();
+	td.innerHTML = getPriceElement();
+	td = tr.insertCell();
+	td.innerHTML = getAmountElement();
+	td = tr.insertCell();
+	td.innerHTML = getSubTotalElement();
+}
+
+/**
+删除行
+*/
+function deleteLine(itemName){
+	var table = document.all.item(itemName);
+	var length = table.rows.length;
+	var form = document.form1;
+	var name = form.name;
+	var unit = form.unit;
+	var price = form.price;
+	var amount = form.amount;
+	
+	if(id == 0){
+		alert("已经不能再删除");
+		return;
+	}
+	
+	
+	if(name[id - 1].value.length != 0 || unit[id - 1].value.length != 0 || price[id - 1].value.length != 0 || amount[id - 1].value.length != 0){
+		if(!confirm("尾行中有数据,是否删除？"))		
+		return;
+	}
+
+	table.deleteRow(length - 3);
+	id--;
+	totalRefrech();
+}
+
+/**
+数字格式判断
+*/
+function checkNumber(txt){
+	if(isNaN(txt.value)){
+		alert("请输入数字");
+		txt.select();
+	}
+}
+
+/**
+小计计算
+*/
+function compute(index){
+	var form = document.form1;
+	var price = form.price[index].value;
+	var amount = form.amount[index].value;
+	var subtotal = 0;
+	
+	if(price.length != 0 && amount.length != 0){
+		subtotal = parseFloat(price) * parseInt(amount);
+		document.all['subtotal' + index].style.display = "";
+		document.all['subtotal' + index].innerText = subtotal;
+	}
+	totalRefrech();
+}
+
+/**
+总计计算
+*/
+
+function totalRefrech(){
+	var total = 0;
+	
+	for(var i = 0; i < id; i++){
+		total += parseFloat(document.all['subtotal' + i].innerText);
+	}
+	document.all['total'].innerText = total;
+}
+
+/**
+表单元素：名称
+*/
+function getNameElement(){
+	var str = "";
+	
+	str += "<select name='name'>";
+	str += "<option value=''></option>";
+	str += "<option value='1'>1</option>";
+	str += "<option value='2'>2</option>";
+	str += "<option value='3'>3</option>";
+	str += "<option value='3'>3</option>";
+	str += "</select>";
+	
+	return str;
+}
+
+
+function getUnitElement(){
+	var str = "";
+	
+	str += "<select name='unit'>";
+	str += "<option value=''></option>";
+	str += "<option value='1'>1</option>";
+	str += "<option value='2'>2</option>";
+	str += "<option value='3'>3</option>";
+	str += "<option value='3'>3</option>";
+	str += "</select>";
+	
+	return str;
+}
+
+function getPriceElement(){
+	return "<input type='text' size='5' name='price' onKeyUp='checkNumber(this)' onblur='compute(" + (id - 1) + ")'/>";
+}
+
+function getAmountElement(){
+	return "<input type='text' size='5' name='amount' onKeyUp='checkNumber(this)' onblur='compute(" + (id - 1) + ")'/>";
+}
+
+function getSubTotalElement(){
+	return "<div id='subtotal" + (id - 1) +"' style='display:none'>0</div>";
+}
+
+</script>
+<script src="js/PopupCalendar.js"></script>
+
+</head>
+
+<body>
+<table id="tb" width="50%" border="1" align="center" cellpadding="0" cellspacing="0">
+<form name="form1" action="">
+  <tr>
+    <td align="center">日期</td>
+    <td colspan="5"><input type="text" name="textfield" onclick="getDateString(this,oCalendarEn)" /></td>
+  </tr>
+  <tr>
+    <td align="center">序号</td>
+    <td align="center">名称</td>
+    <td align="center">单位</td>
+    <td align="center">数量</td>
+    <td align="center">单价</td>
+    <td align="center">小计</td>
+  </tr>
+  <tr>
+    <td colspan="5" align="right">合计</td>
+    <td><div id="total"></div></td>
+  </tr>
+  <tr>
+    <td colspan="6" align="center"><input type="button" name="Submit" value="新增行" onclick="newLine('tb')" />
+      <input type="button" name="Submit2" value="删除尾行" onclick="deleteLine('tb')" /></td>
+  </tr>
+  </form>
+</table>
+</body>
+</html>
+<iframe  width="0" height="0"></iframe>

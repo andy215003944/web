@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE> 打印字式输出 </TITLE>
+  <META NAME="Generator" CONTENT="EditPlus">
+  <META NAME="Author" CONTENT="">
+  <META NAME="Keywords" CONTENT="">
+  <META NAME="Description" CONTENT="">
+ </HEAD>
+<SCRIPT language="JavaScript">
+<!--
+
+	var layers = document.layers, style = document.all, both = layers || style, idme=908601;
+	if (layers) { layerRef = 'document.layers'; styleRef = ''; } if (style) { layerRef = 'document.all'; styleRef = '.style'; }
+
+	function writeOnText(obj, str) {
+	  if (layers) with (document[obj]) { document.open();  document.write(str); document.close(); }
+	  if (style) eval(obj+'.innerHTML= str');
+	}
+	//以下是输出的内容，自己修改即可。
+	var dispStr = new Array(
+		"<font color=red size=3>欢迎光临精彩JavaScript世界...</font><br><font color=green size=3>你知道怎样在你的网页中做一个很酷的网页菜单吗?</font><br><font color=red size=3>你知道怎样让你的网页背景向上或向下移动吗?</font><br><font color=blue size=3>你知道怎样在你的主页中任意位置显示一个时钟吗?</font><br><font color=red size=3>你知道怎样在主页中做特效文字吗?</font><br><font color=black size=3>你知道怎样做一个很cool的日历吗?</font>"
+	);
+
+	var overMe=0;
+
+	function txtTyper(str, idx, idObj, spObj, clr1, clr2, delay, plysnd) {
+	  var tmp0 = tmp1 = '', skip = 0;
+	    if (both && idx <= str.length) {
+		if (str.charAt(idx) == '<') { while (str.charAt(idx) != '>') idx++; idx++; }
+		if (str.charAt(idx) == '&' && str.charAt(idx+1) != ' ') { while (str.charAt(idx) != ';') idx++; idx++; }
+		tmp0 = str.slice(0,idx);
+		tmp1 = str.charAt(idx++);
+
+		if (overMe==0 && plysnd==1) {
+		  if (navigator.plugins[0]) {
+		    if (navigator.plugins["LiveAudio"][0].type=="audio/basic" && navigator.javaEnabled()) {
+			document.embeds[0].stop();
+			setTimeout("document.embeds[0].play(false)",100); }
+		  } else if (document.all) {
+			ding.Stop();
+			setTimeout("ding.Run()",100);
+		  }
+		  overMe=1;
+		} else overMe=0;
+
+		writeOnText(idObj, "<span class="+spObj+"><font color='"+clr1+"'>"+tmp0+"</font><font color='"+clr2+"'>"+tmp1+"</font></span>");
+		setTimeout("txtTyper('"+str+"', "+idx+", '"+idObj+"', '"+spObj+"', '"+clr1+"', '"+clr2+"', "+delay+" ,"+plysnd+")",delay);
+	  }
+	}
+
+	function init() {
+		txtTyper(dispStr[0], 0, 'ttl0', 'ttl1', '#339933', '#99FF33', 50, 0);
+	}
+
+	// -->
+</SCRIPT>
+
+</head>
+<body bgcolor="#ffffff" onload="init()">
+<DIV class=ttl1 id=ttl0><SPAN class=ttl1></SPAN></DIV>
+
+ </BODY>
+</HTML>

@@ -1,0 +1,145 @@
+<html>
+<head>
+<title>中国站长天空-网页特效-类似框架的JS导航菜单</title>
+<meta http-equiv="content-Type" content="text/html;charset=gb2312">
+<!--把下面代码加到<head>与</head>之间-->
+<SCRIPT language=JavaScript>
+			function secBoard(n)
+			{
+				for(i=1;i<6;i++)
+				{
+					eval("document.getElementById('cel"+i+"').background=''");
+				}
+				eval("document.getElementById('cel"+n+"').background=''");
+				for(i=1;i<6;i++)
+					eval("tbx0"+i+".style.display='none'");
+				eval("tbx0"+n+".style.display='block'");
+			}
+			
+</SCRIPT>
+</head>
+<body>
+<!--把下面代码加到<body>与</body>之间-->
+<div align="center">
+	<table border="0" width="600" cellpadding="0" style="border-collapse: collapse" id="table1">
+		<tr>
+			<td width="93" height="125" align="center" valign="top">
+			<table border="0" width="100%" cellpadding="2" id="table28">
+				<tr>
+					<td valign="top">
+					<div align="center">
+						<table border="1" width="100%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#FF0000" id="table29">
+							<tr>
+								<td id=cel1 onclick=secBoard(1) style="cursor:hand" height="25" align="center">链接1</td>
+							</tr>
+							<tr>
+								<td id=cel2 onclick=secBoard(2) style="cursor:hand" height="25" align="center">链接2</td>
+							</tr>
+							<tr>
+								<td id=cel3 onclick=secBoard(3) style="cursor:hand" height="25" align="center">链接3</td>
+							</tr>
+							<tr>
+								<td id=cel4 onclick=secBoard(4) style="cursor:hand" height="25" align="center">链接4</td>
+							</tr>
+							<tr>
+								<td id=cel5 onclick=secBoard(5) style="cursor:hand" height="25" align="center">链接5</td>
+							</tr>
+						</table>
+					</div>
+					</td>
+				</tr>
+			</table>
+			</td>
+			<td valign="top">
+			<table border="0" width="100%" cellpadding="2" id="table2">
+				<tr>
+					<td>
+					<div align="center">
+						<table border="1" width="100%" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#0000FF" id="table3">
+							<tr>
+								<td valign="top"><TABLE id=Table27 cellSpacing=0 cellPadding=0 width=300 
+                        border=0>
+                          <TBODY>
+                          <TR>
+                            <TD width=1 bgColor=#a9a9a9 height="1"></TD>
+                            <TD class=p2 width=298 bgcolor="#CCCCCC" height="1"></TD></TR>
+                          <TR>
+                            <TD width=1><BR></TD>
+                            <TD class=p2 width=298>
+                              <TABLE id=tbx01 style="DISPLAY: block" 
+                              cellSpacing=5 cellPadding=0 width="100%" 
+                              align=center border=0>
+                                <TBODY>
+                                <TR>
+                                <TD class=p2>
+								<p style="line-height: 150%">
+								<font color="#FF0000"><b>链接1的内容：</b></font>酒水 香烟 鲁菜 东北 官府 湘菜 苏菜 陕西 <BR>湖北 淮扬 西餐 酒水 香烟 鲁菜 东北 官府 湘菜 苏菜 陕西 <BR>湖北 淮扬 西餐酒水 香烟 鲁菜 东北 官府 湘菜 苏菜 陕西 <BR>湖北 淮扬 西餐酒水 香烟 鲁菜 东北 官府 湘菜 苏菜 陕西 <BR>湖北 淮扬 西餐</TD></TR></TBODY></TABLE>
+                              <TABLE id=tbx02 style="DISPLAY: none" 
+                              cellSpacing=5 cellPadding=0 width="100%" 
+                              align=center border=0>
+                                <TBODY>
+                                <TR>
+                                <TD class=p2>
+								<p style="line-height: 150%">
+								<font color="#FF0000"><b>链接2的内容：</b></font>观前街 人民路 广济路 石路 朱家庄 西单 崇文门  
+								<br>
+								苏州街 方庄 石路 朱家庄 西单 崇文门  
+								<br>
+								苏州街 方庄 石路 朱家庄 西单 崇文门  
+								<br>
+								苏州街 方庄 观前街 人民路 广济路 石路 朱家庄 西单 崇文门  
+								<br>
+								苏州街 方庄 石路 朱家庄 西单 崇文门  
+								<br>
+								苏州街 方庄 石路 朱家观前街 人民路 广济路 石路 朱家庄 西单 崇文门  
+								<br>
+								苏州街 方庄 石路 朱家庄 西单 崇文门  
+								<br>
+								苏州街 方庄 石路 朱家</TD></TR></TBODY></TABLE>
+                              <TABLE id=tbx03 style="DISPLAY: none" 
+                              cellSpacing=5 cellPadding=0 width="100%" 
+                              align=center border=0>
+                                <TBODY>
+                                <TR>
+                                <TD class=p2>
+								<p style="line-height: 150%">
+								<font color="#FF0000"><b>链接3的内容：</b></font>水煮鱼 烤鸭 香辣蟹 火锅 羊蝎子 农家菜 烧烤 小吃 <BR>鲍翅 快餐 
+								鱼 烤鸭 香辣蟹 火锅 羊蝎子 农家菜 烧烤鱼 烤鸭 香辣蟹 火锅 羊蝎子 农家菜 烧烤香辣蟹 
+								火锅 羊蝎子 农家菜 烧烤鱼 烤鸭 香辣蟹 火锅 羊蝎子 农家菜 烧烤香辣蟹 火锅 羊蝎子 
+								农家菜 烧烤鱼 烤鸭 香辣蟹 火锅 羊蝎子 农家菜 烧烤</TD></TR></TBODY></TABLE>
+								<TABLE id=tbx04 style="DISPLAY: none" 
+                              cellSpacing=5 cellPadding=0 width="100%" 
+                              align=center border=0>
+                                <TBODY>
+                                <TR>
+                                <TD class=p2>
+								<p style="line-height: 150%">
+								<font color="#FF0000"><b>链接4的内容：</b></font>水煮鱼 烤鸭 香辣蟹 火锅 羊蝎子 农家菜 烧烤 小吃 <BR>鲍翅 快餐 
+								农家菜 烧烤 小吃 <BR>鲍翅 快餐 农家菜 烧烤 小吃 <BR>鲍翅 快餐 煮鱼 烤鸭 
+								香辣蟹 火锅 羊蝎子 农家菜 烧烤 小吃 <BR>鲍翅 快餐 
+								农家菜 烧烤 小吃 <BR>鲍翅 快餐 农家菜 烧烤 小吃 <BR>鲍翅 快餐 </TD></TR></TBODY></TABLE>
+								<TABLE id=tbx05 style="DISPLAY: none" 
+                              cellSpacing=5 cellPadding=0 width="100%" 
+                              align=center border=0>
+                                <TBODY>
+                                <TR>
+                                <TD class=p2>
+								<p style="line-height: 150%">
+								<font color="#FF0000"><b>链接5的内容：</b></font>水煮鱼 烤鸭 香辣蟹 火锅 羊蝎子 农家菜 烧烤 小吃 <BR>
+								鲍翅 快餐快餐快餐快餐快餐快餐快餐快餐快餐快餐快餐快餐快餐快餐  煮鱼 烤鸭 香辣蟹 
+								火锅 羊蝎子 农家菜 烧烤 小吃 <BR>
+								鲍翅 快餐快餐快餐快餐快煮鱼 烤鸭 香辣蟹 火锅 羊蝎子 农家菜 烧烤 小吃 <BR>
+								鲍翅 快餐快餐快餐快餐快</TD></TR></TBODY></TABLE></TD>
+                            <TD width=1><BR></TD></TR></TBODY></TABLE></td>
+							</tr>
+						</table>
+					</div>
+					</td>
+				</tr>
+			</table>
+			</td>
+		</tr>
+		</table>
+</div>
+</body>
+</html>

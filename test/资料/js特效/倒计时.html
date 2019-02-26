@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE> 倒计时间 </TITLE>
+  <META NAME="Generator" CONTENT="EditPlus">
+  <META NAME="Author" CONTENT="">
+  <META NAME="Keywords" CONTENT="">
+  <META NAME="Description" CONTENT="">
+ </HEAD>
+
+ <BODY>
+	<span id='bx0' class='z' style='text-align:left;'>1:00:00</span>
+		<script type='text/javascript'>
+			var lt=3600;//倒计时时间，单位秒
+			v=new Date();
+			var bx0=document.getElementById('bx0');
+			function tbx0(){
+				n=new Date();
+				s=lt-Math.round((n.getTime()-v.getTime())/1000.);m=0;h=0;
+				if(s<0){
+					bx0.innerHTML='---';document.location=document.location;}
+				else{if(s>59){
+					m=Math.floor(s/60); s=s-m*60}
+				if(m>59){
+					h=Math.floor(m/60);m=m-h*60} 
+				if(s<10){
+					s='0'+s}
+				if(m<10){
+					m='0'+m}bx0.innerHTML=' '+h+':'+m+':'+s+'';
+					document.title=h+':'+m+':'+s+' Gladiatus';
+					window.setTimeout('tbx0();',999);
+				}
+			}
+			tbx0();
+		</script>
+	  
+  </script>
+ </BODY>
+</HTML>

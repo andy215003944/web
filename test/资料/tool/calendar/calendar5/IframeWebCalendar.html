@@ -1,0 +1,94 @@
+<table onmouseover="tableOnmouseover()" onmouseout="tableOnmouseout()"  id="WebCalendar1:tblTotalCalendar" class="tableTotalCalendar" cellSpacing="2" cellPadding="0" border="1">
+  <tbody>
+	  <tr height="18">
+		<td class="selCells" colSpan="3">
+				<select id="WebCalendar1:selMonth" class="selMonth" accessKey=M onchange="return selOnClick();">
+				<option value=01 selected>一月</option>
+				<option value=02>二月</option>
+				<option value=03>三月</option>
+				<option value=04>四月</option>
+				<option value=05>五月</option>
+				<option value=06>六月</option>
+				<option value=07>七月</option>
+				<option value=08>八月</option>
+				<option value=09>九月</option>
+				<option value=10>十月</option>
+				<option value=11>十一月</option>
+				<option value=12>十二月</option>
+				</select>
+		</td>
+		<td class="selCells" align="right" colSpan="3">
+			<input onkeypress="CheckNum()" id="WebCalendar1:selYea"r onblur="selBlur('WebCalendar1')" class="selYear" align="right" name=WebCalendar1:selYear />
+		</td>
+		<td class="selCells selUpDown">
+			<div class="UpDown" align="left"><img id="WebCalendar1:imgUp" onclick="return imgUpOnclick();" height="9" src="images/calendar_002.gif"></div>
+			<div class="UpDown" align="left"><img id=WebCalendar1:imgDown onclick="return imgDownOnclick('WebCalendar1')" height=9 src="images/calendar_003.gif"></div>
+		</td>
+	</tr>
+	<tr>
+		<td class="WeekEndTitle">日</td>
+		<td class="WeekDayTitle">一</td>
+		<td class="WeekDayTitle">二</td>
+		<td class="WeekDayTitle">三</td>
+		<td class="WeekDayTitle">四</td>
+		<td class="WeekDayTitle">五</td>
+		<td class="WeekEndTitle">六</td>
+	</tr>
+	<tr>
+		<td class="WeekEnd" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+		<td class="WeekDay" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+		<td class="WeekDay" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+		<td class="WeekDay" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+		<td class="WeekDay" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+		<td class="WeekDay" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+		<td class="WeekEnd" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+	</tr>
+	<tr>
+		<td class="WeekEnd" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+		<td class="WeekDay" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+		<td class="WeekDay" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+		<td class="WeekDay" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+		<td class="WeekDay" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+		<td class="WeekDay" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+		<td class="WeekEnd" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+	</tr>
+	<tr>
+		<td class="WeekEnd" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+		<td class="WeekDay" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+		<td class="WeekDay" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+		<td class="WeekDay" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+		<td class="WeekDay" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+		<td class="WeekDay" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+		<td class="WeekEnd" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+	</tr>
+	<tr>
+		<td class="WeekEnd" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+		<td class="WeekDay" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+		<td class="WeekDay" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+		<td class="WeekDay" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+		<td class="WeekDay" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+		<td class="WeekDay" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+		<td class="WeekEnd" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+	</tr>
+	<tr>
+		<td class="WeekEnd" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+		<td class="WeekDay" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+		<td class="WeekDay" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+		<td class="WeekDay" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+		<td class="WeekDay" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+		<td class="WeekDay" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+		<td class="WeekEnd" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+	</tr>
+	<tr>
+		<td class="WeekEnd" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+		<td class="WeekDay" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+		<td class="WeekDay" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+		<td class="WeekDay" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+		<td class="WeekDay" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+		<td class="WeekDay" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+		<td class="WeekEnd" ondblclick="tdOndblclick();" onclick="tdOnclick();"></td>
+	</tr>
+  </tbody>
+</table>
+<script language="javascript" src="IframeWebCalendar.js"></script>
+<link href="IframeWebCalendar.css" type="text/css" rel="stylesheet"></link>

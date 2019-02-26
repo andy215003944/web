@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			var x = document.getElementById("demo");
+
+			function getLocation() {
+
+				if(navigator.geolocation) {
+					navigator.geolocation.getCurrentPosition(showPosition);
+
+				}
+				else {
+					x.innerHTML = "该浏览器不支持获取地理位置。";
+				}
+
+			}
+
+			function showPosition(position) {
+				x.innerHTML = "Latitude: " + position.coords.latitude +
+					"<br>Longitude: " + position.coords.longitude;
+
+			}
+		</script>
+
+	</head>
+
+	<body>
+		<div id="demo" style="width:500px;height: 300px;">
+			
+		</div>
+		<div>
+			
+		</div>
+		<div>
+			<!-- 表单测试-->
+			<form>
+				<table>
+					<tr>
+						<td>电话号码: <input type="tel" name="usrtel"/></td>
+					</tr>
+					<tr>
+						<td>常用邮箱: <input type="email" name="usremail"/></td>
+					</tr>
+					<tr>
+						<td>年龄: <input type="range" name="points" min="1" max="200"/></td>
+					</tr>
+					<tr>
+						<td>网址: <input type="url" name="url" /></td>
+					</tr>
+					<tr>
+						<td>
+							<datalist id="browsers">
+								<option value="Internet Explorer">
+								<option value="Firefox">
+								<option value="Chrome">
+								<option value="Opera">
+								<option value="Safari">
+							</datalist>
+							<input list="browsers" value="" alt="输入快捷提示"/>
+							
+						</td>
+					</tr>
+					<tr>
+						<td><button onclick="submit();" >提交</button></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</body>
+	<script>
+		//getLocation();
+	</script>
+</html>

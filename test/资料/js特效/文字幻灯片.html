@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>51du.cn-代码演示专用页面</title>
+<style type="text/css">
+.trans {filter:revealTrans(Transition=12,Duration=1)}
+</style>
+</head>
+<body>
+<script language="JavaScript">
+Text = new Array(
+	"<a href='http://www.51du.cn' target='_blank' class='cr4'>班级留言“说”出口，校友录开通语音留言服务</a>",
+	"<a href='http://www.51du.cn' class='cr4'>星级会员新体验,享受无广告的清新校友录</a>",
+	"<a href='http://www.51du.cn' target='_blank' class='cr4'>星级会员免费多彩留言,表情,贴图,个性无限...</a>",
+	"<a href='http://www.51du.cn' target='_blank' class='cr4'>星级会员免费留言下载,导出更多昔日记忆</a>",
+	"<a href='http://www.51du.cn' target='_blank' class='cr4'>在5千万用户中脱颖而出,我是星级会员</a>"
+)
+var IDX= -1;
+function playAd() {
+	if (IDX==Text.length-1) {
+		IDX=0;
+	} else {
+		IDX++;
+	}
+	var prefix = "";
+	divText.filters[0].apply();
+	divText.innerHTML = prefix + Text[IDX];
+	divText.filters[0].play();
+	to = setTimeout("playAd()",6000);
+}
+</script>
+<table width=453 border=0 cellspacing=3 cellpadding=0>
+          <tr bgcolor=CCF4B9> 
+            <td height=24 bgcolor=CCF4B9 id=divText class=trans></td>
+          </tr>
+	  <script>playAd()</script>
+ </table>
+</body>
+</html>

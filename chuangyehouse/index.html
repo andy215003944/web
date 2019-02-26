@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title></title>
+</head>
+
+<style type="text/css">
+
+
+.db {
+	display: block;
+}
+
+.weixinAudio {
+	line-height: 1.5;
+}
+
+.audio_area {
+	display: inline-block;
+	width: 100%;
+	vertical-align: top;
+	margin: 0px 1px 0px 0;
+	font-size: 0;
+	position: relative;
+	font-weight: 400;
+	text-decoration: none;
+	-ms-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+}
+
+.audio_wrp {
+	border: 1px solid #ebebeb;
+	background-color: #fcfcfc;
+	overflow: hidden;
+	padding: 12px 20px 12px 12px;
+}
+
+.audio_play_area {
+	float: left;
+	margin: 9px 22px 10px 5px;
+	font-size: 0;
+	width: 18px;
+	height: 25px;
+}
+
+.playing .audio_play_area .icon_audio_default {
+	display: block;
+}
+
+.audio_play_area .icon_audio_default {
+	background: transparent url(img/iconloop.png) no-repeat 0 0;
+	width: 18px;
+	height: 25px;
+	vertical-align: middle;
+	display: inline-block;
+	-webkit-background-size: 54px 25px;
+	background-size: 54px 25px;
+	background-position: -36px center;
+}
+
+.audio_play_area .icon_audio_playing {
+	background: transparent url(img/iconloop.png) no-repeat 0 0;
+	width: 18px;
+	height: 25px;
+	vertical-align: middle;
+	display: inline-block;
+	-webkit-background-size: 54px 25px;
+	background-size: 54px 25px;
+	-webkit-animation: audio_playing 1s infinite;
+	background-position: 0px center;
+	display: none;
+}
+
+.audio_area .pic_audio_default {
+	display: none;
+	width: 18px;
+}
+
+.tips_global {
+	color: #8c8c8c;
+}
+
+.audio_area .audio_length {
+	float: right;
+	font-size: 14px;
+	margin-top: 3px;
+	margin-left: 1em;
+}
+
+.audio_info_area {
+	overflow: hidden;
+}
+
+.audio_area .audio_title {
+	font-weight: 400;
+	font-size: 17px;
+	margin-top: -2px;
+	margin-bottom: -3px;
+	width: auto;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	word-wrap: normal;
+}
+
+.audio_area .audio_source {
+	font-size: 14px;
+}
+
+.audio_area .progress_bar {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background-color: #0cbb08;
+	height: 2px;
+}
+
+.playing .audio_play_area .icon_audio_default {
+	display: none;
+}
+
+.playing .audio_play_area .icon_audio_playing {
+	display: inline-block;
+}
+
+@-webkit-keyframes audio_playing {
+	30% {
+		background-position: 0px center;
+	}
+	31% {
+		background-position: -18px center;
+	}
+	61% {
+		background-position: -18px center;
+	}
+	61.5% {
+		background-position: -36px center;
+	}
+	100% {
+		background-position: -36px center;
+	}
+}
+
+
+</style>
+
+<body>
+<p>
+	<image src="img/water.png"/>
+</p>
+<p class="weixinAudio">
+	<audio src="" id="media" width="1" height="1" preload></audio>
+	<span id="audio_area" class="db audio_area">
+	<span class="audio_wrp db">
+	<span class="audio_play_area">
+		<i class="icon_audio_default"></i>
+		<i class="icon_audio_playing"></i>
+	</span>
+	<span id="audio_length" class="audio_length tips_global">3:07</span>
+	<span class="db audio_info_area">
+		<strong class="db audio_title">创业大厦</strong>
+		<span class="audio_source tips_global">饮水系统</span>
+	</span>
+	<span id="audio_progress" class="progress_bar" style="width: 0%;"></span>
+	</span>
+	</span>
+</p>
+<marquee direction="up" scrollamount="5" width="500px" height="100px" onmouseover="this.stop()" onmouseout="this.start()">
+1.	利用全球领先的反渗透组合膜分离技术将水中的有害物质全部去除，再用高级氧化杀菌和矿化PH值调节技术，使最终到达直饮水卫生标准；<br/>
+2.	使用世界500强设备美国陶氏化学反渗透膜、丹麦格兰富增压泵、日本三菱PLC控制系统、瑞士ABB电控系统、荷兰飞利浦杀菌系统。再采用食品级S304不锈钢管道输送水质更健康；<br/>
+3.	实现水质远程控制、在线监测，末端采用防千滚水、防干烧系统加热是水质更加稳定更加健康。
+
+</marquee>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script src="js/weixinAudio.js" type="text/javascript"></script>
+<script type="text/javascript">
+$('.weixinAudio').weixinAudio({
+	autoplay:true,
+	src:'sound/sound.mp3',
+});
+</script>
+
+</body>
+</html>

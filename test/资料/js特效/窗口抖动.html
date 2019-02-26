@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE> 窗口移动 </TITLE>
+  <META NAME="Generator" CONTENT="EditPlus">
+  <META NAME="Author" CONTENT="kiss">
+  <META NAME="Keywords" CONTENT="">
+  <META NAME="Description" CONTENT="">
+
+  <SCRIPT LANGUAGE="JavaScript">
+	function moveWin() {
+		for (var i = 1; i < 1001; i++){
+			if(i%10==0)
+				window.moveBy(0, 5);
+			if(i%10==1)
+				window.moveBy(0, -5);
+		}
+		window.moveBy(0, 0);
+	}
+
+</script>
+ </HEAD>
+
+ <BODY>
+	<input type=button value="得色一下" onClick="moveWin();">
+ </BODY>
+</HTML>
+
+
+
+
+

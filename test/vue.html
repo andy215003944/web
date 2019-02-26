@@ -1,0 +1,77 @@
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>vuejs测试</title>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"/> 
+	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+</head>
+
+<body>
+
+	<div id="app">
+		<p>{{message}}</p>
+	</div>
+<script>
+	new Vue(
+		{
+			el:'#app',
+			data:{
+				message:'hello Vue.js'
+			},
+			template:'<div>00000{{message}}0000</div>'
+		}
+	)
+</script>
+
+
+<div id="app1">
+    <button @click="toshow">点击让子组件显示</button>
+    <component v-bind:is="which_to_show" ></component>
+</div>
+<script>
+    var vm = new Vue({
+        el: '#app1',
+        data: {
+            which_to_show: "first"
+        },
+        methods: {
+            toshow: function () {   //切换组件显示
+                var arr = ["first", "second", "third", ""];
+                var index = arr.indexOf(this.which_to_show);
+                if (index < 3) {
+                    this.which_to_show = arr[index + 1];
+                } else {
+                    this.which_to_show = arr[0];
+                }
+                //console.log(this.$children);
+            }
+        },
+        components: {
+            first: { //第一个子组件
+                template: "<div>这里是子组件1</div>"
+            },
+            second: { //第二个子组件
+                template: "<div>这里是子组件2，这里是ajax后的内容：{{hello}}</div>",
+				data: function () {
+                    return {
+                        hello: ""
+                    }
+                },
+                activate: function (done) { //执行这个参数时，才会切换组件
+                    var self = this;
+                    $.get("test.html", function (data) {    //这个ajax我手动在服务器端设置延迟为2000ms，因此需要等待2秒后才会切换
+                        self.hello = data;
+                        done(); //ajax执行成功，切换组件
+                    })
+                }
+            },
+            third: { //第三个子组件
+                template: "<div>这里是子组件3</div>"
+            },
+        }
+    });
+</script>
+</body>
+</html>

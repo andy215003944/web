@@ -1,0 +1,14 @@
+<OBJECT id=dlgHelper CLASSID="clsid:3050f819-98b5-11cf-bb82-00aa00bdce0b" width="0px" height="0px"></OBJECT>
+ 
+<script>
+var tempColor = "0099cc";
+function returnColor(){
+    var Hcolor = dlgHelper.ChooseColorDlg(tempColor).toString(16);
+    with(event.srcElement){
+        value = ((Hcolor.length<6)?"000000".substring(0,6-Hcolor.length):"") + Hcolor;    
+        style.backgroundColor = ((Hcolor.length<6)?"000000".substring(0,6-Hcolor.length):"") + Hcolor;    
+    }    
+    tempColor = Hcolor
+}
+</script>
+<input type="text" value="#0099CC" size="12" onclick="returnColor()" style="background-color: #0099CC">

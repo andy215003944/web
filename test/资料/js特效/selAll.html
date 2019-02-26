@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>全部选中</title>
+	<script type="text/javascript">
+		function checkDel(){
+			var userids = document.all("check");
+			if(userids==null ){
+				alert("没有可删除的对象！");
+				return false;
+			}
+			if(userids.length==undefined && userids.checked==false){				
+				alert("请先选中一个对象，在进行删除！");
+				return false;
+			}
+			if(userids.length!=undefined){			
+				var count=0;
+				for(var i=0;i<userids.length;i++){
+					if(userids[i].checked==true)
+						count=count+1;
+					}
+				if(count==0){
+					alert("请先选中一个对象，在进行删除！");
+					return false;
+				}
+			}
+			
+			if(!confirm("车辆档案删除，如果该车辆有使用记录，则记录一并删除，\n确定要删除吗？")){
+				return false;
+			}
+			return true;
+		}
+		function checkall(){
+			var userids = document.all("check");
+			if(userids.length==undefined){
+				userids.checked=true;
+			}else{
+				for(var i=0;i<userids.length;i++){
+					userids[i].checked=true;
+				}
+				document.getElementById("cid").innerHTML="<a href='javascript:cancelall()' style='text-decoration:none;'>[取消]</a>";
+			}
+		}
+		function cancelall(){
+			var userids = document.all("check");
+			if(userids.length==undefined){
+				userids.checked=false;
+			}else{
+				for(var i=0;i<userids.length;i++){
+					userids[i].checked=false;
+				}
+				document.getElementById("cid").innerHTML="<a href='javascript:checkall()' style='text-decoration:none;'>[全选]</a>";
+			}
+	}
+	</script>
+</head>
+<body>
+			<table border="1" align="center">
+                  <td width="95" height="20"><label id="cid"><a href="javascript:checkall();" style="text-decoration:none;">[全选]</a></label></td>
+					<td >车辆编号</td>
+                    <td >品牌</td>
+                	<td>操作</td>
+                </tr>
+				<tr align="center">
+					<td ><input type="checkbox" name="check" value="" /></td>
+                    <td width="12%">001</td>
+                    <td >大众</td>
+					<td>查看</td>
+                </tr>
+				<tr align="center">
+				   <td><input type="checkbox" name="check" value="" /></td>
+                   <td width="12%">002</td>  
+				   <td >夏利</td>
+                	<td>操作</td>
+                </tr>
+				<tr>
+					<td colspan="4" align="center">
+						<input type="button" value="删除" onclick="checkDel();"/>
+					</td>
+				</tr>
+				</table>
+
+</body>
+</html>
+

@@ -1,0 +1,218 @@
+body{padding:10px;
+background-image: url(../pic/map_bg.jpg);
+background-repeat: repeat-x;} 
+
+
+
+.chanongjiameng{
+	float:left;
+	width:120px;
+	height:40px;
+	text-align:center;
+	background:url(../pic/chanongjiameng.png);
+	background-size:120px 40px; 
+	border:0px solid #ccc;} 
+.chakedenglu{
+	float:left;
+	width:120px;
+	height:40px;
+	text-align:center;
+	background:url(../pic/chakedenglu.png);
+	background-size:120px 40px; 
+	border:0px solid #ccc;} 
+.chashanfengcai{
+	float:left;
+	width:120px;
+	height:40px;
+	text-align:center;
+	background:url(../pic/chashanfengcai.png);
+	background-size:120px 40px; 
+	border:0px solid #ccc;} 
+.chandizhixiao{
+	float:left;
+	width:120px;
+	height:40px;
+	text-align:center;
+	background:url(../pic/chandizhixiao.png);
+	background-size:120px 40px; 
+	border:0px solid #ccc;} 
+.yibeihaocha{
+	float:left;
+	width:120px;
+	height:40px;
+	text-align:center;
+	background:url(../pic/yibeihaocha.png);
+	background-size:120px 40px; 
+	border:0px solid #ccc;} 
+.guanyuwomen{
+	float:left;
+	width:120px;
+	height:40px;
+	text-align:center;
+	background:url(../pic/guanyuwomen.png);
+	background-size:120px 40px; 
+	border:0px solid #ccc;} 	 
+	 
+
+.chashumiaod{
+	float:left;
+	width:20px;
+	height:20px;
+	text-align:center;
+	background:url(chashumiao.png);
+	background-size:20px 20px; 
+	line-height:60px;
+	font-size:12px;
+	border:0px solid #ccc;
+	margin-right:10px;
+	margin-bottom:4px;
+
+	 } 
+	 
+.zuobianyuan{
+	float:left;
+	width:20px;
+	height:20px;
+	text-align:center;
+	background:url(zuobianyuan.png);
+	background-size:20px 20px; 
+	line-height:60px;
+	font-size:12px;
+	border:0px solid #ccc;
+	margin-right:10px;
+	margin-bottom:4px;
+	 } 
+
+
+ 
+.youbianyuan{
+	float:left;
+	width:20px;
+	height:20px;
+	text-align:center;
+	background:url(youbianyuan.png);
+	background-size:20px 20px; 
+	line-height:60px;
+	font-size:12px;
+	border:0px solid #ccc;
+	margin-right:10px;
+	margin-bottom:4px;
+	 }  
+	 
+.qitalvuzhid{
+	float:left;
+	width:20px;
+	height:20px;
+	text-align:center;
+	background:url(qitalvuzhid.png);
+	background-size:20px 20px; 
+	line-height:60px;
+	font-size:12px;
+	border:0px solid #ccc;
+	margin-right:10px;
+	margin-bottom:4px;
+	 }  
+	 
+	 
+.xiamiandelu{
+	float:left;
+	width:20px;
+	height:20px;
+	text-align:center;
+	background:url(xiamiandelu.png);
+	background-size:20px 20px; 
+	line-height:60px;
+	font-size:12px;
+	border:0px solid #ccc;
+	margin-right:10px;
+	margin-bottom:4px;
+	 }  
+
+
+ 
+.qitalvuzhid{
+	float:left;
+	width:20px;
+	height:20px;
+	text-align:center;
+	background:url(qitalvuzhid.png);
+	background-size:20px 20px; 
+	line-height:60px;
+	font-size:12px;
+	border:0px solid #ccc;
+	margin-right:10px;
+	margin-bottom:4px;
+	 }  
+	 
+ 
+.zheliyoushu{
+	float:left;
+	width:20px;
+	height:20px;
+	text-align:center;
+	background:url(zheliyoushu.png);
+	background-size:20px 20px; 
+	line-height:60px;
+	font-size:12px;
+	border:0px solid #ccc;
+	margin-right:10px;
+	margin-bottom:4px;
+	 }  
+	 
+.yougeshitou{
+	float:left;
+	width:20px;
+	height:20px;
+	text-align:center;
+	background:url(yougeshitou.png);
+	background-size:20px 20px; 
+	line-height:60px;
+	font-size:12px;
+	border:0px solid #ccc;
+	margin-right:10px;
+	margin-bottom:4px;
+	 }  
+
+.zheshizacao{
+	float:left;
+	width:20px;
+	height:20px;
+	text-align:center;
+	background:url(zheshizacao.png);
+	background-size:20px 20px; 
+	line-height:60px;
+	font-size:12px;
+	border:0px solid #ccc;
+	margin-right:10px;
+	margin-bottom:4px;
+	 }  
+	 
+.zheshidaolu{
+	float:left;
+	width:20px;
+	height:20px;
+	text-align:center;
+	background:url(zheshidaolu.png);
+	background-size:20px 20px; 
+	line-height:60px;
+	font-size:12px;
+	border:0px solid #ccc;
+	margin-right:10px;
+	margin-bottom:4px;
+	 }  
+	 
+.xiamiandelu{
+	float:left;
+	width:20px;
+	height:20px;
+	text-align:center;
+	background:url(xiamiandelu.png);
+	background-size:20px 20px; 
+	line-height:60px;
+	font-size:12px;
+	border:0px solid #ccc;
+	margin-right:10px;
+	margin-bottom:4px;
+	 }  
+.seled{border:1px solid red;background-color:#D6DFF7;} 
+ h3{text-align: center;padding-bottom: 10px}

@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+
+		<style>
+			div.newcolor {
+				background: greenyellow;
+			}
+		</style>
+
+		<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$(".btn1").click(function() {
+					$("#div1").animate({
+						height: "300px",
+						width: "200px",
+						marginLeft: "100px"
+					});
+				});
+				$(".btn2").click(function() {
+					$("#div1").animate({
+						height: "100px",
+						width: "100px",
+						marginLeft: "0px"
+					});
+				});
+				$("#btnFadeIn").click(function() {
+					$("#div1").fadeIn(500);
+					$("#div2").fadeIn(1000);
+					$("#div3").fadeIn(1500);
+				});
+				$("#btnFadeOut").click(function() {
+					$("#div1").fadeOut(500);
+					$("#div2").fadeOut(1000);
+					$("#div3").fadeOut(1500);
+				});
+				$("#btnFadeToggle").click(function() {
+					$("#div1").fadeToggle();
+				});
+				$("#btnFadeTo").click(function() {
+					$("#div1").fadeTo(1000, 0.5);
+				});
+
+				$("#btnFlip").click(function() {
+					$("#div").slideToggle(1000);
+				});
+
+				$("#btnStop").click(function() {
+					$("#div3").stop();
+				});
+
+				$("#btnQueue").click(function() {
+					$("#div3").show("slow");
+					$("#div3").animate({
+						marginLeft: '200px'
+					}, 2000);
+					$("#div3").queue(function() {
+						$(this).css("background-color", "#000000");
+						$(this).dequeue();
+					});
+					$("#div3").animate({
+						marginLeft: '0px'
+					}, 500);
+					$("#div3").queue(function() {
+						//$(this).removeClass("newcolor");
+						$(this).css("background-color", "blue");
+						$(this).dequeue();
+					});
+					$("#div3").slideUp();
+					$("#div3").slideDown();
+
+				})
+
+			});
+		</script>
+
+	</head>
+
+	<body>
+		<!--  Animate -->
+		<div id="div" style="width: 100%;">
+			<div id="div1" style="width:100px;height:100px;background-color:red;float:left"></div>
+			<div id="div2" style="width:100px;height:100px;background-color:green;float: left;"></div>
+			<div id="div3" style="width:100px;height:100px;background-color:blue;float:left;"></div>
+		</div>
+
+		<div style="width: 100%;float: left;">
+			<button class="btn1">Animate</button>
+			<button class="btn2">Reset</button>
+			<br>
+			<!--  淡入淡出 -->
+			<button id="btnFadeIn">淡入</button><button id="btnFadeOut">淡出</button>
+			<button id="btnFadeToggle">淡入淡出</button><button id="btnFadeTo">淡入淡出定值</button>
+			<br>
+			<!--  滑动 -->
+			<button id="btnFlip">滑动</button>
+
+			<button id="btnStop">停止动画</button>
+
+			<button id="btnQueue">队列动画</button>
+		</div>
+
+	</body>
+
+</html>

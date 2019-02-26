@@ -1,0 +1,235 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE> »ð³µÕ¾¹ö¶¯ÆÁÄ» </TITLE>
+  <META NAME="Generator" CONTENT="EditPlus">
+  <META NAME="Author" CONTENT="kiss">
+  <META NAME="Keywords" CONTENT="">
+  <META NAME="Description" CONTENT="">
+  <SCRIPT>
+var i=0;
+var i_cell=0;
+i_bg=0;
+var linkslist;
+var bg = new Array('AACC00','77AA00', '557700', '335500', '003300', '000000', '#335500', '557700', '77AA00', 'AACC00', 'CCFF00');
+
+function initObjects() {
+	if (document.all) {
+		linkslist = document.all.linkliste.style;
+		linkslist.visibility='VISIBLE';
+		linkslist.posTop = i;
+		linkslist.posLeft = 3;
+		scrollIE();
+	}
+
+	if (document.layers) {
+		linkslist = document.linkliste;
+		linkslist.visibility='VISIBLE';
+		linkslist.top = i;
+		linkslist.left = 3;
+		scrollNN();
+	}
+}
+
+function scrollNN() {
+	if (i_cell < 100) {
+		i_cell++;
+		linkslist.top = i--;
+		var timer = setTimeout('scrollNN()',20);
+	}else {
+		clearTimeout('timer');
+		changebgNN();
+	}
+}
+
+function scrollIE() {
+	if (i_cell < 100) {
+		i_cell++;
+		linkslist.posTop = i--;
+		var timer = setTimeout('scrollIE()',20);
+	}else {
+		clearTimeout('timer');
+		document.bgColor='CCFF00';
+		changebgIE();
+	}
+}
+
+function changebgNN() {
+	if (i_bg <= bg.length) {
+		document.bgColor=bg[i_bg];
+		i_bg++;
+		var bgagain = setTimeout('changebgNN()',20);
+	}else {
+		clearTimeout('bgagain');
+		document.bgColor='CCFF00';
+		i_bg=0;
+		makepauseNN();
+	}
+}
+
+function changebgIE() {
+	if (i_bg <= bg.length) {
+		document.bgColor=bg[i_bg];
+		i_bg++;
+		var bgagain = setTimeout('changebgIE()',50);
+	}else {
+		clearTimeout('bgagain');
+		i_bg=0;
+		makepauseIE();
+	}
+}
+
+function makepauseNN() {
+	if (i < (-1*1700)) {
+		i=0;
+	}
+	i_cell=0;
+	var scrollagain = setTimeout('scrollNN()',3000);
+}
+
+function makepauseIE() {
+	if (i < (-1*1700)) {
+		i=0;
+	}
+	i_cell=0;
+	var scrollagain = setTimeout('scrollIE()',3000);
+}
+</SCRIPT>
+
+<STYLE>.alldiv {
+	POSITION: absolute; VISIBILITY: hidden
+}
+</STYLE>
+ </HEAD>
+
+ <BODY bgcolor="#ffffff" onload=initObjects()>
+
+<DIV class=alldiv id=linkliste>
+<CENTER>
+<TABLE border=0 cellPadding=0 cellSpacing=0 width=156>
+  <TBODY>
+  <TR>
+    <TD height=100></TD></TR>
+  <TR vAlign=top>
+    <TD align=left height=100><FONT size=1><A 
+      href="http://www.netby.net/Nord/Rosinstraede/Rosenlund/" 
+      target=_blank><FONT size=1><B>DHTML and javascript, games and 
+      gimics</B></FONT></A><BR>A collection of a few of my own javascripted 
+      games and gimics and some links to other sites. Some remarkable scripts. 
+      <BR>Rating: <FONT color=#ff0000>**</FONT><FONT 
+      color=#999999>***</FONT><BR><BR></FONT></TD></TR>
+  <TR vAlign=top>
+    <TD align=left height=100><FONT size=1><A 
+      href="http://skandal.homepage.com/" target=_blank><FONT 
+      size=1><B>Skandal's Digital art and graffiti 
+      (DHTML)</B></FONT></A><BR>site with lots of images made with adobe 
+      photoshop. Slow loading. Nice effects.<BR>Rating: <FONT 
+      color=#ff0000>**</FONT><FONT color=#999999>***</FONT><BR><BR></FONT></TD></TR>
+  <TR vAlign=top>
+    <TD align=left height=100><FONT size=1><A 
+      href="http://www2.mozcom.com/~halos/" target=_blank><FONT 
+      size=1><B>Emmanuel Halos Web Studio</B></FONT></A><BR>First-rate 
+      JavaScripts from the Philippines. You will be enthusiastic about the 
+      elegance and power of the samples.<BR>Rating: <FONT 
+      color=#ff0000>*****</FONT><FONT color=#999999></FONT><BR><BR></FONT></TD></TR>
+  <TR vAlign=top>
+    <TD align=left height=100><FONT size=1><A 
+      href="http://www.geocities.com/~lef" target=_blank><FONT size=1><B>Scripts 
+      by Lefteris Haritou</B></FONT></A><BR>Lefteris Haritou is a very creative 
+      JavaScript writer. Why? Check it out! A perfect starting point for 
+      beginners. <BR>Rating: <FONT color=#ff0000>****</FONT><FONT 
+      color=#999999>*</FONT><BR><BR></FONT></TD></TR>
+  <TR vAlign=top>
+    <TD align=left height=100><FONT size=1><A 
+      href="http://home.thezone.net/~rbennett/utility/javahead.htm" 
+      target=_blank><FONT size=1><B>Racoon's JavaScript 
+      Site</B></FONT></A><BR>Feel the spirit and the humour of a great 
+      script-programmer. Lots of inspiration.<BR>Rating: <FONT 
+      color=#ff0000>****</FONT><FONT color=#999999>*</FONT><BR><BR></FONT></TD></TR>
+  <TR vAlign=top>
+    <TD align=left height=100><FONT size=1><A 
+      href="http://goepfert.hypermart.net/" target=_blank><FONT size=1><B>Free 
+      WebResources</B></FONT></A><BR>Contains all kinds of free resources for 
+      webmasters: JavaScript, HTML, DHTML, CGI, Java, Graphics. Useful site 
+      checkers.<BR>Rating: <FONT color=#ff0000>***</FONT><FONT 
+      color=#999999>**</FONT><BR><BR></FONT></TD></TR>
+  <TR vAlign=top>
+    <TD align=left height=100><FONT size=1><A href="http://igor.net/" 
+      target=_blank><FONT size=1><B>Igor net</B></FONT></A><BR>No doubt IGOR is 
+      one of the great javascript-masters of the universe. His games are superb. 
+      High-End-Scripting at it's best.<BR>Rating: <FONT 
+      color=#ff0000>*****</FONT><FONT color=#999999></FONT><BR><BR></FONT></TD></TR>
+  <TR vAlign=top>
+    <TD align=left height=100><FONT size=1><A 
+      href="http://www.alienalchemy.com/" target=_blank><FONT size=1><B>Alien 
+      Alchemy</B></FONT></A><BR>12 free cut &pastejavascripts made by 
+      designers who know that form follows function.<BR>Rating: <FONT 
+      color=#ff0000>***</FONT><FONT color=#999999>**</FONT><BR><BR></FONT></TD></TR>
+  <TR vAlign=top>
+    <TD align=left height=100><FONT size=1><A 
+      href="http://home.netvigator.com/~mkpunnl" target=_blank><FONT 
+      size=1><B>Leo Pun's homepage</B></FONT></A><BR>Open your eyes and you will 
+      find quite a few precious javacripts.<BR>Rating: <FONT 
+      color=#ff0000>***</FONT><FONT color=#999999>**</FONT><BR><BR></FONT></TD></TR>
+  <TR vAlign=top>
+    <TD align=left height=100><FONT size=1><A 
+      href="http://www.geocities.com/SiliconValley/Way/1265/" 
+      target=_blank><FONT size=1><B>Surfin' the web with Willem 
+      Jonkman</B></FONT></A><BR>Great samples of javascript, HTML, sounds, fonts 
+      mixed with lots of fun.<BR>Rating: <FONT color=#ff0000>***</FONT><FONT 
+      color=#999999>**</FONT><BR><BR></FONT></TD></TR>
+  <TR vAlign=top>
+    <TD align=left height=100><FONT size=1><A 
+      href="http://www.geocities.com/SiliconValley/Lakes/8620" 
+      target=_blank><FONT size=1><B>Virtual_Max's</B></FONT></A><BR>One of the 
+      most popular sites at GeoCities: applets, scripts, crazy stuff. As funny 
+      as a web bazar can be.<BR>Rating: <FONT color=#ff0000>***</FONT><FONT 
+      color=#999999>**</FONT><BR><BR></FONT></TD></TR>
+  <TR vAlign=top>
+    <TD align=left height=100><FONT size=1><A href="http://www.reallybig.com/" 
+      target=_blank><FONT size=1><B>Reallybig.com</B></FONT></A><BR>United Power 
+      of Web Builders! More than 3000 resources for web builders including free 
+      clipart, CGI, counters, fonts, html, java, animation, backgrounds and much 
+      more.<BR>Rating: <FONT color=#ff0000>***</FONT><FONT 
+      color=#999999>**</FONT><BR><BR></FONT></TD></TR>
+  <TR vAlign=top>
+    <TD align=left height=100><FONT size=1><A 
+      href="http://stars.bilkent.edu.tr/Authoring/DHTML/Resources.html" 
+      target=_blank><FONT size=1><B>Dynamic HTML Tools and 
+      Resources</B></FONT></A><BR>The web developer's virtual library: DHTML, 
+      CSS, JavaScript, CGI, Perl, Graphics<BR>Rating: <FONT 
+      color=#ff0000>***</FONT><FONT color=#999999>**</FONT><BR><BR></FONT></TD></TR>
+  <TR vAlign=top>
+    <TD align=left height=100><FONT size=1><A 
+      href="http://www.javascripts.com/" target=_blank><FONT 
+      size=1><B>Javascripts.com</B></FONT></A><BR>More than 2000 scripts. Each 
+      script has been written or uploaded by a member of this site. Many have 
+      been written by JavaScript professionals.<BR>Rating: <FONT 
+      color=#ff0000>****</FONT><FONT color=#999999>*</FONT><BR><BR></FONT></TD></TR>
+  <TR vAlign=top>
+    <TD align=left height=100><FONT size=1><A 
+      href="http://www.coolfreebies.com/" target=_blank><FONT size=1><B>Cool 
+      free stuff</B></FONT></A><BR>Screensavers, various freebies, free 
+      software, free sound tools, free graphics, free midis, free image viewers, 
+      free prizes, chat freebies, FTP freebies, free fun stuff, free webmasters 
+      tools, free graphics.<BR>Rating: <FONT color=#ff0000>***</FONT><FONT 
+      color=#999999>**</FONT><BR><BR></FONT></TD></TR>
+  <TR vAlign=top>
+    <TD align=left height=100><FONT size=1><A 
+      href="http://javascript.internet.com/" target=_blank><FONT size=1><B>The 
+      JavaScript Source</B></FONT></A><BR>Collection of hundreds of free 
+      JavaScripts that are available to you for use on your web page<BR>Rating: 
+      <FONT color=#ff0000>****</FONT><FONT 
+    color=#999999>*</FONT><BR><BR></FONT></TD></TR>
+  <TR vAlign=top>
+    <TD align=left height=100><FONT size=1><A 
+      href="http://www.dynamicdrive.com/" target=_blank><FONT size=1><B>Free, 
+      original DHTML-scripts</B></FONT></A><BR>A premier place on the net to 
+      obtain free, original DHTML scripts and components to enhance your web 
+      site!<BR>Rating: <FONT color=#ff0000>***</FONT><FONT 
+      color=#999999>**</FONT><BR><BR></FONT></TD></TR></TBODY></TABLE></CENTER></DIV>
+
+
+
+ </BODY>
+</HTML>

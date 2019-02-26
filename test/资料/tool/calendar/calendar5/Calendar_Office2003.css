@@ -1,0 +1,165 @@
+INPUT.txtClass 
+{
+	BORDER-RIGHT: black 0px solid; 
+	BORDER-TOP: black 0px solid; 
+	FONT-SIZE: 8pt; 
+	BACKGROUND: none transparent scroll repeat 0% 0%; 
+	BORDER-LEFT: black 0px solid; 
+	BORDER-BOTTOM: black 0px solid; 
+	HEIGHT: 16px
+}
+INPUT.selYear
+{
+	WIDTH: 70px; 
+	HEIGHT: 20px;
+	FONT-SIZE: 9pt;
+}
+INPUT.Width10px
+{
+	WIDTH: 10px; 
+	CURSOR: default;
+}
+INPUT.Width12px
+{
+	WIDTH: 12px; 
+	CURSOR: default;
+}
+INPUT.Width13px
+{
+	WIDTH: 13px; 
+	CURSOR: default;
+}
+INPUT.Width28px
+{
+	WIDTH: 28px; 
+	CURSOR: default;
+}
+SELECT.selMonth
+{
+	FONT-SIZE: 9pt; 
+	WIDTH: 70px; 
+	HEIGHT: 20px;
+}
+BUTTON.ShowCalendar
+{
+	BORDER-RIGHT: black 0px solid; 
+	BORDER-TOP: black 0px solid; 
+	MARGIN: 0px; 
+	BORDER-LEFT: black 0px solid; 
+	WIDTH: 22px; 
+	BORDER-BOTTOM: black 0px solid; 
+	HEIGHT: 22px;
+}
+IMG.ShowCalendar
+{	
+}
+DIV.OutSide 
+{
+	BORDER-RIGHT: #c0c0c0 1px solid; 
+	BORDER-TOP: #808080 1px solid; 
+	FONT-SIZE: 8pt; 
+	BORDER-LEFT: #808080 1px solid; 
+	WIDTH: 100px; 
+	BORDER-BOTTOM: #c0c0c0 1px solid; 
+	HEIGHT: 16px
+}
+DIV.UpDown
+{
+	BORDER-RIGHT: #5661a8 1px solid; 
+	BORDER-TOP: #5661a8 1px solid; 
+	BORDER-LEFT: #5661a8 1px solid; 
+	WIDTH: 100%; 
+	BORDER-BOTTOM: #5661a8 1px solid; 
+	HEIGHT: 10px;
+}
+DIV.Panel
+{
+	BORDER-RIGHT: #000000 0px; 
+	BORDER-TOP: #000000 0px; 
+	Z-INDEX: 99999; 	
+	BORDER-LEFT: #000000 0px; 
+	WIDTH: 0px; CURSOR: hand; 
+	BORDER-BOTTOM: #000000 0px; 
+	POSITION: absolute; 	
+}
+TABLE.TableTotalCalendar
+{
+	BORDER-RIGHT: #5661a8 1px solid; 
+	BORDER-TOP: #5661a8 1px solid; 
+	FONT-SIZE: 9pt; 
+	BACKGROUND: #FCFAF0; 
+	BORDER-LEFT: #5661a8 1px solid; 
+	BORDER-BOTTOM: #5661a8 1px solid;
+	CURSOR: hand;
+	Height:100%;
+	Width:100%;
+}
+TD.selCells
+{
+	BORDER: #e0e3f7 0px solid; 
+	BACKGROUND: #e0e3f7;
+}
+TD.selUpDown
+{
+	BACKGROUND: #ffffff;
+}
+TD.broder 
+{
+	BORDER-RIGHT: #ffffff 1px solid; 
+	BORDER-TOP: #000000 1px solid; 
+	FONT-SIZE: 8pt; 
+	BACKGROUND: #ffffff; 
+	BORDER-LEFT: #000000 1px solid; 
+	WIDTH: 100px; 
+	BORDER-BOTTOM: #ffffff 1px solid; 
+	HEIGHT: 16px
+}
+TD.SelectDay
+{
+	border:solid 1px black;	
+	filter : progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorStr=#F6F6FD,endColorStr=#FAE39F);
+	text-align:center;
+}
+TD.WeekEnd
+{
+	COLOR: #ff0000;
+	BORDER-RIGHT: #5661a8 1px solid; 
+	BORDER-TOP: #ffffff 1px solid; 	
+	BORDER-LEFT: #ffffff 1px solid; 
+	BORDER-BOTTOM: #5661a8 1px solid; 
+	text-align:center;
+	filter : progid:DXImageTransform.Microsoft.gradient(GradientType=1,startColorStr=#F6F6FD,endColorStr=#A5A3BD);
+	text-align:center;
+}
+TD.WeekEndTitle
+{
+	WIDTH: 25px; 
+	COLOR: #000000;
+	filter : progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorStr=#dcebfe,endColorStr=#527fd0);
+	BORDER-RIGHT: #5661a8 1px solid; 
+	BORDER-TOP: #ffffff 1px solid; 	
+	BORDER-LEFT: #ffffff 1px solid; 
+	BORDER-BOTTOM: #5661a8 1px solid; 
+	text-align:center;
+}
+TD.WeekDay
+{
+	BORDER-RIGHT: #5661a8 1px solid; 
+	BORDER-TOP: #ffffff 1px solid; 	
+	BORDER-LEFT: #ffffff 1px solid; 
+	BORDER-BOTTOM: #5661a8 1px solid; 
+	filter : progid:DXImageTransform.Microsoft.gradient(GradientType=1,startColorStr=#F6F6FD,endColorStr=#A5A3BD);
+	text-align:center;
+
+}
+TD.WeekDayTitle
+{
+	filter : progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorStr=#dcebfe,endColorStr=#527fd0);
+	COLOR: #000000;
+	WIDTH: 25px;	
+	BORDER-RIGHT: #5661a8 1px solid; 
+	BORDER-TOP: #ffffff 1px solid; 	
+	BORDER-LEFT: #ffffff 1px solid; 
+	BORDER-BOTTOM: #5661a8 1px solid; 
+	text-align:center;	
+}

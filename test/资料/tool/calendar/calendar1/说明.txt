@@ -1,0 +1,53 @@
+calendarOld文件夹里是根据梅花雨日历控件3.0修正后的版本
+1.修正嵌套在Frame或IFrame中报错问题;
+2.修正星期和日期表格没有对齐问题;
+3.修正选择月份下拉框时,状态栏被修改问题;
+4.增加了清空按钮;
+5.增加设置显示日期天数的设置(从35天到39天)
+6.修正页面不能使用网页标准化格式问题（即页面可以加下下面一行代码
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">）
+7.修正日历弹出时，按下“CTRL”键报错问题。
+8.修正拖动日历控件时，鼠标稍快就无法拖拽问题。
+
+
+calendarNew文件夹里是根据我的需要修改过的版本
+1.包含上述全部修正;
+2.可以调整日历宽度(原版每个日期太小,点击时比较费劲一点);
+3.直接显示年和月的下拉框,旧版本改年月时要先点一下,比较烦(但是速度比旧版本慢了一点,我以为这个问题可以忽略)
+4.年份选择框写死,只能选择系统当年的前后50年(比如现在是2007年,那么下拉表就是1957~2007,其它年份不可选,另:这个50年也可以设置)
+
+
+使用注意事项及常见错误：
+1.缺少对象：
+　a.JS文件的编码格式不对，请把JS文件另存为你的调用文件所用的编码模式
+　　原版本说只能在GB2312下使用，实际不是这样的，你可以把JS文件另存为UTF-8格式就可以正常使用了；
+　b.没有引入JS文件，用<script language="javascript" src="calendar.js" type="text/javascript" ></script>引入就好了。
+
+2.点击其它地方不隐藏日历框：
+　在JS文件中定义了document.onclick方法，如果在你的页面上也定义了这个方法，
+　请记得把JS文件的document.onclick方法内容添加到你的这个方法中去。
+
+3.其它一些问题：注意你定义的全局参数中不能有：cal_Width、WebCalendar。
+　你定义的方法也不能与JS文件中的方法重名，已有方法列表：
+　calendar()  用户的主调函数 
+　writeIframe()  对iframe进行初始化 
+　WebCalendar()  初始化日历的设置 
+　funMonthSelect() 月份的下拉框 
+　funYearSelect()  年份的下拉框 
+　prevM()  往前翻月份 
+　nextM()  往后翻月份 
+　prevY()  往前翻 Year 
+　nextY()  往后翻 Year 
+　hiddenSelect()　  隐藏年份与月份的下拉框 
+　hiddenCalendar() 隐藏日历控件 
+　appendZero(n)  日期自动补零程序 
+　dayMouseOver()  日历里日期的 onmouseover 事件 
+　dayMouseOut()  日历里日期的 onmouseout  事件 
+　writeCalendar()  对日历显示数据的核心处理程序 
+　returnDate()  根据日期格式等返回用户选定的日期 
+
+有人说希望有英文版，这个就更简单了，打开JS文件，把里面的中文全部改成对应的英文就好了，偶的英文不太好 -_-|
+
+使用中有什么问题,欢迎和我交流:youbl@126.com
+水边
+2007.11.14

@@ -1,0 +1,222 @@
+<html>
+<head>
+  <title>
+    卷帘菜单
+  </title>
+  <META content="text/html; charset=gb2312" http-equiv=Content-Type>
+  <style>
+    .a1
+    {
+      COLOR: #000080; FONT-FAMILY: ms sans-serif; TEXT-DECORATION: none
+    }
+    .a1:hover
+    {
+      CURSOR: hand; COLOR: #ff2200; FONT-FAMILY: ms sans-serif; TEXT-DECORATION: none
+    }
+    .a2 
+    {
+      COLOR: #000080; FONT-FAMILY: ms sans-serif; TEXT-DECORATION: none
+    }
+    .a2:hover
+    {
+      CURSOR: hand; COLOR: #ff2200; FONT-FAMILY: ms sans-serif; TEXT-DECORATION: underline
+    }
+    DIV.clTopMenu
+    {
+      Z-INDEX: 31; VISIBILITY: hidden; WIDTH: 88px; CLIP: rect(0px 88px 14px 0px); POSITION: absolute; 
+      HEIGHT: 150px; BACKGROUND-COLOR: #eeeeee; layer-background-color: #EEEEEE
+    }
+    DIV.clTopMenuBottom 
+    {
+      Z-INDEX: 2; WIDTH: 88px; CLIP: rect(0px 88px 3px 0px); POSITION: absolute; TOP: 31px; 
+      HEIGHT: 3px; BACKGROUND-COLOR: #cecfce; layer-background-color: #CECFCE
+    }
+    DIV.clTopMenuText
+    {	
+      FONT-SIZE: 12px; Z-INDEX: 1; LEFT: 5px; WIDTH: 88px; FONT-FAMILY: arial,helvetica; 
+      POSITION: absolute; TOP: 31px; BACKGROUND-COLOR: #eeeeee
+    }
+  </style>
+  <script language=JavaScript>
+    ie=document.all?1:0  //判断是否浏览器是IE4.0以上版本
+    n=document.layers?1:0  //判断是否浏览器是Netscape
+    var numberOfMenus=2  //菜单个数，为了说明问题，这里设置了两个菜单
+    var mwidth=90  //menu宽度
+    var pxBetween=10 //两个主菜单之间的像素数目
+    var fromLeft=50  //第一个menu的左边界位置
+    var fromTop=10 //menu的上边界位置
+    var bgColor='#CECFCE' //原来的下边界的背景色
+    var bgColorChangeTo='#6380BC' //鼠标经过主菜单项时下边界的背景色
+    var imageHeight=31 //菜单项的初始高度，这里的设置使它恰是一个主菜单项的高度
+
+    //menu对象的构造函数
+    function makeNewsMenu(obj,nest)
+    {
+      nest=(!nest)?'':'document.'+nest+'.'//nest如果为空，表明添加的是主菜单项，否则nest代表主菜单项，obj代表子菜单项					
+      this.css=(n)?eval(nest+'document.'+obj):eval('document.all.'+obj+'.style')//设置样式表属性变量准备给它赋值	
+      this.scrollHeight=n?this.css.document.height:eval('document.all.'+obj+'.offsetHeight')//设置子菜单项高度
+      
+      //以下设置函数入口为自己编写的函数
+      this.moveIt=b_moveIt;
+      this.bgChange=b_bgChange;
+      this.slideUp=b_slideUp; 
+      this.slideDown=b_slideDown;
+      this.clipTo=b_clipTo;
+      
+      //以下为传入的菜单项对象链接到this指针，这意味着对象可以使用诸如上述的clipTo等方法
+      this.obj = obj + "Object"; 	
+      eval(this.obj + "=this")		
+    }
+    
+    //以下为menu对象的方法
+    //移动菜单项到特定的位置
+    function b_moveIt(x,y)
+    {
+      this.x=x; 
+      this.y=y; 
+      this.css.left=this.x; 
+      this.css.top=this.y
+    }
+
+    //更改背景色
+    function b_bgChange(color)
+    {
+      if(ie) 
+        this.css.backgroundColor=color; 
+      else this.css.bgColor=color
+    }
+    
+    //设定显示区域，其top,right,bottom,left分别为t,r,b,l
+    function b_clipTo(t,r,b,l)
+    {
+      if(n)
+      {
+        this.css.clip.top=t; 
+        this.css.clip.right=r; 
+        this.css.clip.bottom=b; 
+        this.css.clip.left=l
+      }
+      else this.css.clip="rect("+t+","+r+","+b+","+l+")";
+    }
+
+    //往上卷
+    function b_slideUp(ystop,moveby,speed,fn,wh)
+    {
+      if(!this.slideactive)
+      {
+	if(this.y>ystop)
+	{
+	  this.moveIt(this.x,this.y-5); 
+	  eval(wh)
+	  setTimeout(this.obj+".slideUp("+ystop+","+moveby+","+speed+",'"+fn+"','"+wh+"')",speed)
+	}
+	else
+	{
+	  this.slideactive=false; 
+	  this.moveIt(0,ystop); 
+	  eval(fn)
+	}
+      }
+    }
+
+    //往下卷
+    function b_slideDown(ystop,moveby,speed,fn,wh)
+    {
+      if(!this.slideactive)
+      {
+	if(this.y<ystop)
+	{
+	  this.moveIt(this.x,this.y+5); 
+	  eval(wh)
+	  setTimeout(this.obj+".slideDown("+ystop+","+moveby+","+speed+",'"+fn+"','"+wh+"')",speed)
+	}
+	else
+	{
+	  this.slideactive=false; 
+	  this.moveIt(0,ystop); 
+	  eval(fn)
+	}
+      }
+    }
+
+    //初始化，使之实现跨平台运行
+    function newsMenuInit()
+    {
+      oTopMenu=new Array()
+      for(i=0;i<numberOfMenus;i++)
+      {
+	oTopMenu[i]=new Array()
+	oTopMenu[i][0]=new makeNewsMenu('divTopMenu'+i)//创建主菜单项
+	oTopMenu[i][1]=new makeNewsMenu('divTopMenuBottom'+i,'divTopMenu'+i)//创建菜单底部，可认为是一条线
+	oTopMenu[i][2]=new makeNewsMenu('divTopMenuText'+i,'divTopMenu'+i)//创建导航菜单项
+	oTopMenu[i][1].moveIt(0,imageHeight)//初始菜单未展开时，菜单底部在主菜单下
+	oTopMenu[i][0].clipTo(0,mwidth,imageHeight+3,0)//显示区域为0-mwidth和0-imageHeight+3，正好能显示主菜单项和菜单底部
+	oTopMenu[i][0].moveIt(i*mwidth+fromLeft+(i*pxBetween),fromTop)//设置主菜单项的位置
+	oTopMenu[i][0].css.visibility="visible"//设置菜单可视
+      }
+    }
+
+    //卷帘的入口函数
+    function topMenu(num)
+    {
+      if(oTopMenu[num][1].y==imageHeight) //往下卷
+        oTopMenu[num][1].slideDown(oTopMenu[num][2].scrollHeight+20,10,40,'oTopMenu['+num+'][0].clipTo(0,mwidth,oTopMenu['+num+'][1].y+3,0)','oTopMenu['+num+'][0].clipTo(0,mwidth,oTopMenu['+num+'][1].y+3,0)')
+      else if(oTopMenu[num][1].y==oTopMenu[num][2].scrollHeight+20) //往上卷
+        oTopMenu[num][1].slideUp(imageHeight,10,40,'oTopMenu['+num+'][0].clipTo(0,mwidth,oTopMenu['+num+'][1].y+3,0)','oTopMenu['+num+'][0].clipTo(0,mwidth,oTopMenu['+num+'][1].y+3,0)')
+    }
+
+    //在鼠标经过主菜单项时菜单底部改变背景色
+    function menuOver(num)
+    {
+      oTopMenu[num][1].bgChange(bgColorChangeTo)
+    }
+
+    //鼠标离开主菜单项时菜单底部恢复原背景色
+    function menuOut(num)
+    {
+      oTopMenu[num][1].bgChange(bgColor)
+    }
+
+    onload=newsMenuInit;//打开时初始化
+  </script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+  <DIV class=clTopMenu id=divTopMenu0>
+    <A onmouseover=menuOver(0) onclick="topMenu(0); if(ie)this.blur(); return false" onmouseout=menuOut(0) href="#">
+      <IMG alt="" src="/edit/UploadFile/0612220544521068.gif" width=88 align=top height=31 border=0>
+    </A>
+    <DIV class=clTopMenuText id=divTopMenuText0 style="WIDTH: 75px; HEIGHT: 112px" align=center>
+      <br>
+      欢迎访问
+      <br>
+      <br>
+      <a href="" target="_blank">
+        水木清华
+        <br>
+	smth.org
+      </a>
+    </DIV>
+    <DIV class=clTopMenuBottom id=divTopMenuBottom0>
+    </DIV>
+  </DIV>
+  <DIV class=clTopMenu id=divTopMenu1>
+    <A onmouseover=menuOver(1) onclick="topMenu(1); if(ie)this.blur(); return false" onmouseout=menuOut(1) href="#">
+      <IMG alt="" src="/edit/UploadFile/0612220544521068.gif" width=88 align=top height=31 border=0>
+    </A>
+    <DIV class=clTopMenuText id=divTopMenuText1 style="WIDTH:75px;HEIGHT:112px" align=center>
+      <br>
+      欢迎访问
+      <br>
+      <br>
+      <a href="" target="_blank">
+        水木清华
+        <br>
+        smth.org
+      </a>
+    </DIV>
+    <DIV class=clTopMenuBottom id=divTopMenuBottom1>
+    </DIV>
+  </DIV>
+</body>
+</html>

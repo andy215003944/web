@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+
+<style type="text/css">
+<!--
+* {
+	font-family: "宋体";
+	font-size: 12px;
+	text-decoration: none;
+}
+-->
+</style>
+</head>
+
+<body>
+<script language="javascript" type="text/javascript" src="DateTimeCalendar.js">
+</script>
+
+<form id="form1" name="form1" method="post" action="">
+<table width="605" border="0" cellpadding="5" cellspacing="0">
+  <tr>
+    <td colspan="4">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="89" align="right">开始时间：</td>
+    <td width="170">
+      <label>
+        <input name="Txt_SDateTime" type="text" id="Txt_SDateTime"  onclick="calendar();"/>
+        </label>
+    
+    </td>
+    <td width="103" align="right">结束时间：</td>
+    <td width="203"><input name="TxtEDateTime" type="text" id="TxtEDateTime" onfocus="calendar();"/></td>
+  </tr>
+  <tr>
+    <td align="right">下拉列表：</td>
+    <td><label>
+      <select name="select">
+        <option>奥斯地方司法奥斯大发</option>
+        <option>洒地方</option>
+      </select>
+    </label></td>
+    <td align="right">多行文本框：</td>
+    <td><label>
+      <textarea name="textarea"></textarea>
+    </label></td>
+  </tr>
+</table>
+</form>
+</body>
+</html>

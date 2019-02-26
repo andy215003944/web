@@ -1,0 +1,127 @@
+<html>
+<head>
+<script language="javascript">
+function love()
+{
+var time=new Date();
+var year=time.getFullYear();
+var month=time.getMonth();
+var date=time.getDate();
+var hour=time.getHours();
+var minute=time.getMinutes();
+var second=time.getSeconds();
+document.form1.riqi.value=year+"年"+(parseInt(month)+1)+"月"+date+"日 ";
+document.form1.shijian.value=hour+"时"+minute+"分"+second+"秒";
+var myTime=setTimeout("love()",1000);
+}
+var gox=1;
+var goy=1;
+function move()
+{
+
+var w=window.document.body.offsetWidth;
+var h=window.document.body.offsetHeight;
+var speedx=40;
+var speedy=40;
+var x=document.getElementById("Layer1").style.left;
+var y=document.getElementById("Layer1").style.top;
+
+if(parseInt(x)+150>w || parseInt(x)<0)
+gox=-gox;
+if(parseInt(y)+100>h || parseInt(y)<0)
+goy=-goy;
+
+document.getElementById("Layer1").style.left=parseInt(x)+speedx*gox;
+document.getElementById("Layer1").style.top=parseInt(y)+speedy*goy;
+setTimeout("move()",800);
+}
+function openwindow()
+{
+open("tianyaren.htm","","width=650,height=150");
+}
+</script>
+<style type="text/css">
+a{
+color:#CC6666;
+text-decoration:none
+}
+a:hover{
+color:#ff3333
+}
+</style>
+</head>
+<body onLoad="love();openwindow();move()"  bgcolor="#CCFF00">
+
+<form name="form1">
+<div id="Layer1" style=" position:absolute; left:760px;top:150px; z-index:1;background-color:#FF0000;
+ width:140px; height:100px "><img src="../zimage/babypingguo.jpg"></div>
+
+<table width="760" bgcolor="#CCFF33" align="center" border="2" bordercolor="#ff11cc">
+	<tr>
+		<td width="80"><h2 style="color:#FF33cc ">今天是</h2></td>
+		<td colspan="2" width="680" height="20" bgcolor="#33CCCC"><h2 align="center">
+		<strong>灵宝绿源苹果饮料公司</h2>
+		</strong></td>
+	</tr>
+	<tr>
+		<td ><input type="text" name="riqi" size="13"></td>
+		<td  rowspan="2" width="60" bgcolor="#ff3366">最新商品广告</td>
+		<td rowspan="2" width="620"  bgcolor="#CC99ff" >
+<MARQUEE scrolldelay="100" onMouseOver="this.stop( )" onMouseOut="this.start( )">
+<a href="yipianyun.html">雪橇宝宝</a>
+<a href="yipianyun.html">&nbsp;&nbsp;爱立信手机</a>
+<a href="yipianyun.html">&nbsp;&nbsp;超级女生终极PK</a>
+<a href="yipianyun.html">&nbsp;&nbsp;百万象素挡不住的诱惑</a>
+</MARQUEE>
+		</td>
+	</tr>
+	<tr>
+	  <td><input type="text" name="shijian" size="13"></td>
+	</tr>
+</table>
+</form>
+</body>
+</html>
+
+
+
+<script>
+var x = 0
+var speed = 120
+var text = "欢迎使用第一小组开发的粉笔管理系统！  "
+var course = 120
+var text2 = text
+
+function Scroll() {
+window.status = text2.substring(0, text2.length)
+
+if (course < text2.length) {
+setTimeout("Scroll2()", speed)
+}
+
+else {
+text2 = " " + text2
+
+setTimeout("Scroll()", speed);
+}
+}
+
+function Scroll2() {
+window.status = text2.substring(x, text2.length)
+
+if (text2.length - x == text.length) {
+text2 = text
+x = 0
+
+setTimeout("Scroll()", speed);
+}
+
+else {
+x++
+setTimeout("Scroll2()", speed);
+}
+}
+
+Scroll()
+</script>
+

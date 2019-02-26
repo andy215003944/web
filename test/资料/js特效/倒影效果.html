@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE> 倒影 </TITLE>
+  <META NAME="Generator" CONTENT="EditPlus">
+  <META NAME="Author" CONTENT="kiss">
+  <META NAME="Keywords" CONTENT="">
+  <META NAME="Description" CONTENT="">
+
+  <style>
+	.time { font-size: 12pt; line-height: 14pt; color:red;}
+</style>
+<SCRIPT language=JavaScript>
+
+var ctimer;
+
+function init(){
+if (document.all){
+tim2.style.left=tim1.style.posLeft;
+tim2.style.top=tim1.style.posTop+tim1.offsetHeight;
+tim3.style.left=tim1.style.posLeft+tim1.offsetWidth;
+tim3.style.top=tim1.style.posTop;
+settimes();
+}
+}
+
+function settimes(){
+var time= new Date();
+hours= time.getHours();
+mins= time.getMinutes();
+secs= time.getSeconds();
+if (hours<10)
+hours="0"+hours;
+if(mins<10)
+mins="0"+mins;
+if (secs<10)
+secs="0"+secs;
+tim1.innerHTML="北京时间 "+hours+":"+mins+":"+secs;
+tim2.innerHTML="北京时间 "+hours+":"+mins+":"+secs;
+tim3.innerHTML="北京时间 "+hours+":"+mins+":"+secs;
+ctimer=setTimeout('settimes()',960);
+}
+
+</SCRIPT>
+ </HEAD>
+
+ <BODY bgcolor="#ffffff" onload="init()">
+
+<DIV class=time id=tim1 
+style="top:10px;left:50px;position:absolute;width:150px;height:20px; filter: wave(strength=1);"></DIV>
+<!--垂直翻转-->
+<DIV class=time id=tim2 
+style="filter: flipv() glow(color=#ddeeff,strength=2) alpha(opacity=20);font-style:italic;position: absolute"></DIV>
+<!--水平翻转-->
+<DIV class=time id=tim3
+style="filter: fliph() glow(color=#ddeeff,strength=2) alpha(opacity=20);font-style:italic;position: absolute"></DIV>
+ </BODY>
+</HTML>

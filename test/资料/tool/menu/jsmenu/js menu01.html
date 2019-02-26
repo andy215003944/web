@@ -1,0 +1,55 @@
+<LINK href="http://alisoft.alibaba.com/portal/includes/portal.css" rel=stylesheet>
+<style type="text/css">
+#navi{background-image:url(http://alisoft.alibaba.com/portal/images/crm/bg_navi1.gif);background-repeat:repeat-x;height:34px;}
+#navi .ontime{background-image:url(http://alisoft.alibaba.com/portal/images/crm/bg_ontime.gif);background-repeat:no-repeat;height:34px;color:#fff;}
+#navi .ontime a{color:#fff;text-decoration:none;}
+#navi .ontime a:hover{color:#fff;}
+#navi .overtime{background-image:url(http://alisoft.alibaba.com/portal/images/crm/bg_overtime.gif);background-repeat:no-repeat;height:34px;color:#702e0b;}
+#navi li{position:relative;}
+#navi li ul{margin:0px;padding:0px;position:absolute;top:34px;width:80px;left:-1px;border:1px solid #fff;}
+#product{display:none;}
+#navi li a:hover{display:block;width:80px;background-image:url(http://alisoft.alibaba.com/portal/images/crm/bg_overtime.gif);background-repeat:no-repeat;height:34px;padding-top:12px;color:#fff;text-decoration:none;}
+#navi li ul li a{width:80px;background-color:#d76800;color:#fff;height:22px;padding-top:8px;color:#fff;text-decoration:none;}
+#navi li ul li a:hover{width:80px;background-color:#35556c;color:#fff;background-image:none;height:22px;padding-top:8px;text-decoration:none;}
+
+#promo{margin-top:5px;width:510px;height:200px;background-image:url(http://alisoft.alibaba.com/portal/images/crm/bg_left1.gif);background-repeat:repeat-x;}
+#promo2 .promotitle{height:28px;width:240px;background-image:url(http://alisoft.alibaba.com/portal/images/crm/bg_left2.gif);background-repeat:repeat-x;font-size:14px;font-weight:bold;color:#ff7300;padding-left:10px;padding-top:6px;}
+</style>
+
+<div id="navi">
+ <ul>
+  <li id="list1" ><a href="http://alisoft.alibaba.com/portal/default.htm">首页</a></li>
+  <li><img src="http://alisoft.alibaba.com/portal/images/crm/ico_border.gif" /></li>
+  <li id="list2"   onmouseover="proList()" onmouseout="remove()" ><a   href="#">产品</a>
+   <ul id="product" >
+    <li style="border-bottom:1px solid #fff;"><a  href="http://alisoft.alibaba.com/portal/product/alitalkdefault.htm">贸易通</a></li>
+    <li><a  href="http://alisoft.alibaba.com/portal/product/customdefault.htm">客户管理系统</a></li>
+   </ul>
+  </li>
+  <li ><img src="http://alisoft.alibaba.com/portal/images/crm/ico_border.gif" /></li>
+  <li id="list3" ><a   href="http://alisoft.alibaba.com/portal/newuser/newusere.htm">新手上路</a></li>
+  <li><img src="http://alisoft.alibaba.com/portal/images/crm/ico_border.gif" /></li>
+  <li id="list4" class="ontime" ><a   href="http://alisoft.alibaba.com/portal/userclub/userClub.htm">用户俱乐部</a></li>
+  <li><img src="http://alisoft.alibaba.com/portal/images/crm/ico_border.gif" /></li>
+  <li id="list5"><a  href="http://img.china.alibaba.com/alitalk/homepage/help/default.htm" target="_blank">帮助中心</a></li>
+  <li><img src="http://alisoft.alibaba.com/portal/images/crm/ico_border.gif" /></li>
+ </ul>
+</div><!-- end of navi -->
+
+<script language="javascript">
+ function proList(){
+  document.getElementById("product").style.display="block";
+  document.getElementById("list2").className="overtime";
+  }
+ function remove(){
+  if("userclub"=="product"){
+   document.getElementById("list2").className="ontime";
+   }
+  else{
+   document.getElementById("list2").className=""; 
+  } 
+ 
+  document.getElementById("product").style.display="none";
+  }
+  
+</script>

@@ -1,0 +1,45 @@
+<HTML>
+<HEAD>
+<title>Calendar_Office2003</title>
+</HEAD>
+<body MS_POSITIONING="FlowLayout">
+<form name="Form1" method="post" action="Calendar_Office2003.aspx" id="Form1">
+<!--
+WebCalendar Start
+Copyright:2002-2005 Lion (lion.net@163.com , www.lionsky.net)
+-->
+  <input type="hidden" name="WebCalendar1_enabledTime" value="2007-11-14">
+  <span id="WebCalendar1">
+  <script language="javascript" src="WebCalendar.js"></script>
+  <link href="Calendar_Office2003.css" type="text/css" rel="stylesheet"></link>
+  <table cellSpacing="0" cellPadding="0" border="0">
+    <tbody>
+      <tr>
+        <td class="broder"><div class="OutSide">
+            <input  class="txtClass Width28px" id="WebCalendar1:txtYear" onBlur="txt_OnBlue('WebCalendar1')" maxLength="4" value="2007" name="WebCalendar1:txtYearName"><input  class="txtClass Width12px" tabIndex="-1" readOnly value="年" name="text1"><input  class="txtClass Width13px" id="WebCalendar1:txtMonth" onBlur="txt_OnBlue('WebCalendar1')" maxLength="2" value="11" name="WebCalendar1:txtMonthName"><input  class="txtClass Width10px" tabIndex="-1" readOnly value="月" name="text2"><input  class="txtClass Width13px" id="WebCalendar1:txtday" onBlur="txt_OnBlue('WebCalendar1')" maxLength="2" value="14" name="WebCalendar1:txtdayName"><input  class="txtClass Width12px" tabIndex="-1" readOnly value="日" name="text3"></div></td>
+        <td><button  id="WebCalendar1:btnChoose" class="ShowCalendar" onClick="WebCalendar1iFrmCalendar.btn_onclick('WebCalendar1');" tabIndex=-1><IMG class="ShowCalendar"  src="Images/calendar_001.gif"></button></td>
+      </tr>
+    </tbody>
+  </table>
+  <div id=WebCalendar1:DateBox class="Panel" style="HEIGHT: 0px;width:0px;VISIBILITY: hidden; ">
+    <iframe id="WebCalendar1iFrmCalendar" name="WebCalendar1iFrmCalendar" src="IframeWebCalendar.html" border=0 width="100%" height="100%" frameBorder="no" noResize scrolling="no" marginWidth="0" marginHeight="0" leftmargin="0" topmargin="0"></iframe>
+  </div>
+  </span>
+<!-- 
+WebCalendar End
+-->
+  <BR>
+  <BR>
+  <BR>
+  <BR>
+  <BR>
+  <BR>
+  <BR>
+  <BR>
+  <BR>
+  <BR>
+  <BR>
+  <input type="submit" name="Button1" value="获取Calendar的日期" id="Button1" />
+</form>
+</body>
+</HTML>

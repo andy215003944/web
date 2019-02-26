@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE> 上下滚动图片</TITLE>
+  <META NAME="Generator" CONTENT="EditPlus">
+  <META NAME="Author" CONTENT="">
+  <META NAME="Keywords" CONTENT="">
+  <META NAME="Description" CONTENT="">
+ </HEAD>
+
+ <BODY>
+
+ 
+<div id="icefable1" style="width:100％;height:50px;border: 1px solid #FF0000;">
+<!--内容区域开始，可以设为自己的内容-->
+<table width='100％' height="30" border='0' cellPadding='5' cellSpacing='0'>
+  <tr>
+    <td align="center" bgcolor="#F2F2F2" width='100％'>1。内容可以自己定义</td>
+  </tr>
+  <tr>
+    <td align="center" bgcolor="#F9FAED" width='100％'>2。内容可以自己定义</td>
+  </tr>
+</table>
+<!--内容区域结束-->
+</div>
+<div id="icefable2" style="position:absolute;z-index:1;visibility:hidden"></div>
+<script>
+marqueesHeight=30;//滚动区域高度设定
+stopscroll=false;
+icefable1.scrollTop=0;
+with(icefable1){
+//style.width=0;
+style.height=marqueesHeight;
+style.overflowX="visible";
+style.overflowY="hidden";
+noWrap=true;
+onmouseover=new Function("stopscroll=true");
+onmouseout=new Function("stopscroll=false");
+}
+preTop=0; currentTop=0; stoptime=0;
+function init_srolltext(){
+icefable2.innerHTML="";
+icefable2.innerHTML+=icefable1.innerHTML;
+icefable1.innerHTML=icefable2.innerHTML+icefable2.innerHTML;
+setInterval("scrollUp()",20);
+}
+function scrollUp(){
+if(stopscroll==true) return;
+currentTop+=1;
+if(currentTop==marqueesHeight)//向上滚动高度设定
+{
+ stoptime+=1;
+ currentTop-=1;
+ if(stoptime==150)//停顿时间设定
+ {
+  currentTop=0;
+  stoptime=0;
+ }
+}
+else {   
+   preTop=icefable1.scrollTop;
+   icefable1.scrollTop+=1;
+   if(preTop==icefable1.scrollTop){
+     icefable1.scrollTop=icefable2.offsetHeight-marqueesHeight;
+     icefable1.scrollTop+=1;
+   }
+}
+}
+init_srolltext();
+</script>
+
+
+
+ </BODY>
+</HTML>
+

@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<SCRIPT  language=jscript>  
+ elt="0123456789ABCDEF";  
+ var sTBHTMLS="";  
+ var sTBHTMLE="";  
+ for(var i=0;i<0xFF-0x99;i+=2)  
+ {  
+  var cr="";  
+  var l;  
+  var sTBHTML="";  
+  l=i+0x99;  
+  for(var  j=0;j<2;j++)  
+  {  
+   var n=l  %  16;  
+   l=l  >>  4;  
+   cr=elt.charAt(n)+cr;  
+  }  
+  l=i+0x33;  
+  for(var  j=0;j<2;j++)  
+  {  
+   var n=l  %  16;  
+   l=l  >>  4;  
+   cr=elt.charAt(n)+cr;  
+  }  
+  l=i;  
+  for(var  j=0;j<2;j++)  
+  {  
+   var n=l  %  16;  
+   l=l  >>  4;  
+   cr=elt.charAt(n)+cr;  
+  }  
+  var w=i>(0xFF-0xA0)?8:4  
+  sTBHTML="<span  style='height:20;width:"+w+";background-color:#"+cr+";margin:0;padding:0'></span>"  
+  sTBHTMLS+=sTBHTML;  
+  sTBHTMLE=sTBHTML+sTBHTMLE;  
+ }  
+ var sTBHTML=sTBHTMLS+sTBHTMLE;  
+ document.write("<marquee  scrollamount='20'  direction='right'    scrolldelay='1'  height='4'  style='width:100%;height:4;  font-size:6px;background-color:#003399'>")  
+ document.write(sTBHTML)  
+ document.write("</marquee>")  
+</SCRIPT>

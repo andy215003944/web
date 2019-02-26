@@ -1,0 +1,30 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+<script language="javascript" src="calender.js" ></script>
+</head>
+
+<BODY >
+<script >
+
+var oCalendarEn=new PopupCalendar("oCalendarEn"); //初始化控件时,请给出实例名称如:oCalendarEn
+oCalendarEn.Init();
+
+
+var oCalendarChs=new PopupCalendar("oCalendarChs"); //初始化控件时,请给出实例名称:oCalendarChs
+oCalendarChs.weekDaySting=new Array("日","一","二","三","四","五","六");
+oCalendarChs.monthSting=new Array("一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月");
+oCalendarChs.oBtnTodayTitle="今天";
+oCalendarChs.oBtnCancelTitle="取消";
+oCalendarChs.Init();
+</script>
+
+<br><br><br><br>
+　　　<input readonly type="text" name="dd" id="aa" onclick="getDateString(this,oCalendarEn)" value="English Version">
+
+<br><br><br><br>
+　　　<input readonly type="text" name="dd" id="aa" onclick="getDateString(this,oCalendarChs)" value="中文界面版">                                    
+
+</BODY>
+</HTML>
+
